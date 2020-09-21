@@ -59,6 +59,19 @@ function vkreact_bp_delete_activity_user_reaction($args) {
 }
 
 /**
+ * Delete all user activity reactions
+ * 
+ * @param int $user_id    ID of the user.
+ * @return int/boolean
+ */
+function vkreact_bp_delete_activity_user_reactions($user_id) {
+  $Activity_User_Reaction = new VKReact_Activity_User_Reaction();
+
+  // number of affected rows on succesful delete, false on error
+  return $Activity_User_Reaction->deleteUserReactions($user_id);
+}
+
+/**
  * Returns reactions associated to an activity
  * 
  * @param int $activity_id    ID of the activity to return reactions from

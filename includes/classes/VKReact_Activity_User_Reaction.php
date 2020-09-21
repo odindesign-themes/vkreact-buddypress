@@ -84,6 +84,15 @@ class VKReact_Activity_User_Reaction {
       $this->wpdb->prepare($sql, [$activity_id, $reaction_id])
     );
   }
+
+  public function deleteUserReactions($user_id) {
+    $format = ['%d'];
+
+    // number of affected rows on succesful delete, false on error
+    $result = $this->wpdb->delete($this->table, ['user_id' => $user_id], $format);
+
+    return $result;
+  }
 }
 
 ?>

@@ -3,7 +3,7 @@
  * Plugin Name: Vikinger Reactions - BuddyPress Integration
  * Plugin URI: http://odindesign-themes.com/
  * Description: Add reactions to your BuddyPress activities.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Odin Design Themes
  * Author URI: https://themeforest.net/user/odin_design
  * License: https://themeforest.net/licenses/
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 /**
  * Versioning
  */
-define('VKREACT_BP_VERSION', '1.0.0');
+define('VKREACT_BP_VERSION', '1.0.1');
 define('VKREACT_BP_VERSION_OPTION', 'vkreact_bp_version');
 
 /**
@@ -159,5 +159,14 @@ function vkreact_bp_admin_notices() {
 }
 
 add_action('admin_notices', 'vkreact_bp_admin_notices');
+
+/**
+ * Delete user reactions if a user is deleted
+ */
+function vkreact_bp_user_reactions_delete($user_id) {
+  vkreact_bp_delete_activity_user_reactions($user_id);
+}
+
+add_action('deleted_user', 'vkreact_user_reactions_delete');
 
 ?>
