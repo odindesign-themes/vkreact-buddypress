@@ -167,6 +167,6 @@ function vkreact_bp_user_reactions_delete($user_id) {
   vkreact_bp_delete_activity_user_reactions($user_id);
 }
 
-add_action('deleted_user', 'vkreact_user_reactions_delete');
+add_action('deleted_user', 'vkreact_bp_user_reactions_delete');
 
 ?>
