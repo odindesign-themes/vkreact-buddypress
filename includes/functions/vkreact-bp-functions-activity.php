@@ -83,6 +83,7 @@ function vkreact_bp_get_activity_reactions($activity_id) {
   $reactions = $Activity_User_Reaction->getReactions($activity_id);
 
   foreach ($reactions as $reaction) {
+    $reaction->name = vkreact_translation_get_reaction_name($reaction->name);
     $reaction->users = vkreact_bp_get_users_by_activity_reaction($activity_id, $reaction->id);
   }
 

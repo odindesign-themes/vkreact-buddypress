@@ -3,7 +3,7 @@
  * Plugin Name: Vikinger Reactions - BuddyPress Integration
  * Plugin URI: http://odindesign-themes.com/
  * Description: Add reactions to your BuddyPress activities.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Odin Design Themes
  * Author URI: https://themeforest.net/user/odin_design
  * License: https://themeforest.net/licenses/
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 /**
  * Versioning
  */
-define('VKREACT_BP_VERSION', '1.0.3');
+define('VKREACT_BP_VERSION', '1.0.4');
 define('VKREACT_BP_VERSION_OPTION', 'vkreact_bp_version');
 
 /**
